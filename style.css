@@ -1,0 +1,217 @@
+/* === Google Fonts Import === */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* === CSS Variables (Theme) === */
+:root {
+    --primary-color: #4285F4; /* Google Blue */
+    --primary-dark: #3367D6;
+    --accent-color: #34A853; /* Google Green */
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --bg-color: #f8f9fa;
+    --surface-color: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow-1: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+    --shadow-2: 0 4px 6px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.08);
+    --shadow-hover: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
+}
+
+/* === Base & Typography === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+/* === Main Layout & Header === */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-link {
+    position: relative;
+    padding: 8px 0;
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform var(--transition-speed) ease-out;
+}
+
+.nav-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* === Views & Animations === */
+.view {
+    display: none;
+}
+
+.view.active {
+    display: block;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Staggered card animation */
+.animated-card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-in animation for quiz */
+@keyframes slide-in {
+    0% { transform: translateX(100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+.quiz-question-container {
+    animation: slide-in 0.5s ease-in-out;
+}
+
+/* === Cards & Buttons === */
+.card {
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-1);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    border: 1px solid var(--border-color);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.custom-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    box-shadow: var(--shadow-1);
+}
+
+.custom-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-2);
+}
+
+/* === Specific View Styles === */
+
+/* Dashboard */
+#dashboard .nav-link {
+    display: block;
+    padding: 1.5rem;
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-1);
+    border: 1px solid var(--border-color);
+}
+#dashboard .nav-link::after { display: none; } /* Disable underline for dashboard cards */
+
+/* Quiz */
+#quiz-container {
+    border: 1px solid var(--border-color);
+}
+
+.quiz-option {
+    border: 2px solid var(--border-color) !important;
+    transition: all var(--transition-speed) ease !important;
+}
+
+.quiz-option:hover {
+    background-color: #e8f0fe !important; /* Light Google Blue */
+    border-color: var(--primary-color) !important;
+    transform: scale(1.02);
+}
+
+/* Career Paths */
+#career-path-content .bg-white {
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+#career-path-content .bg-white:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Timeline */
+#timeline-list .relative {
+    border-left-color: var(--primary-color);
+}
+#timeline-list span {
+    background-color: #e8f0fe !important;
+    /* ring-color is not a valid CSS property, so it's removed */
+}
+
+/* About Section on Dashboard */
+.about-section {
+    background: linear-gradient(135deg, #e8f0fe 0%, #f8f9fa 100%);
+    border: 1px solid var(--border-color);
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Stop Personalized career And Education Adviser</title>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+    
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+        <script src="https://unpkg.com/lucide@latest"></script>
+
+        <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+     <div class="container mx-auto max-w-7xl min-h-screen flex flex-col">
+
+        <header class="bg-white shadow-sm sticky top-0 z-10">
+            <nav class="flex items-center justify-between p-4">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="compass" class="text-blue-600"></i>
+                    <h1 class="text-2xl font-bold text-gray-800">Career Guide J&K</h1>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden">
+                    <i data-lucide="menu"></i>
+                </button>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="nav-link text-gray-600 hover:text-blue-600 font-medium" data-view="dashboard">Dashboard</a>
+                    <a href="#" class="nav-link text-gray-600 hover:text-blue-600 font-medium" data-view="aptitude-test">Aptitude Test</a>
+                    <a href="#" class="nav-link text-gray-600 hover:text-blue-600 font-medium" data-view="career-paths">Career Paths</a>
+                    <a href="#" class="nav-link text-gray-600 hover:text-blue-600 font-medium" data-view="colleges">Find Colleges</a>
+                    <a href="#" class="nav-link text-gray-600 hover:text-blue-600 font-medium" data-view="timeline">Timeline</a>
+                    <a href="#" class="nav-link text-gray-600 hover:text-blue-600 font-medium" data-view="resources">Resources</a>
+                </div>
+            </nav>
+            <div id="mobile-menu" class="hidden md:hidden bg-white p-4">
+                 <a href="#" class="nav-link block py-2 text-gray-600 hover:text-blue-600" data-view="dashboard">Dashboard</a>
+                 <a href="#" class="nav-link block py-2 text-gray-600 hover:text-blue-600" data-view="aptitude-test">Aptitude Test</a>
+                 <a href="#" class="nav-link block py-2 text-gray-600 hover:text-blue-600" data-view="career-paths">Career Paths</a>
+                 <a href="#" class="nav-link block py-2 text-gray-600 hover:text-blue-600" data-view="colleges">Find Colleges</a>
+                 <a href="#" class="nav-link block py-2 text-gray-600 hover:text-blue-600" data-view="timeline">Timeline</a>
+                 <a href="#" class="nav-link block py-2 text-gray-600 hover:text-blue-600" data-view="resources">Resources</a>
+            </div>
+        </header>
+
+        <main class="flex-grow p-4 md:p-8">
+
+            <div id="dashboard" class="view active">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Welcome, Student!</h2>
+                    <p class="text-gray-600 mt-2 text-lg">Your one-stop platform for career clarity in Jammu & Kashmir.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer nav-link" data-view="aptitude-test"><div class="flex items-center space-x-4"><div class="bg-blue-100 p-3 rounded-full"><i data-lucide="lightbulb" class="text-blue-600"></i></div><div><h3 class="text-xl font-semibold text-gray-800">Discover Your Path</h3><p class="text-gray-500">Take our short aptitude test to find the best stream for you.</p></div></div></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer nav-link" data-view="career-paths"><div class="flex items-center space-x-4"><div class="bg-green-100 p-3 rounded-full"><i data-lucide="map" class="text-green-600"></i></div><div><h3 class="text-xl font-semibold text-gray-800">Explore Careers</h3><p class="text-gray-500">Visually map your course to future jobs and higher studies.</p></div></div></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer nav-link" data-view="colleges"><div class="flex items-center space-x-4"><div class="bg-purple-100 p-3 rounded-full"><i data-lucide="school" class="text-purple-600"></i></div><div><h3 class="text-xl font-semibold text-gray-800">Find Govt. Colleges</h3><p class="text-gray-500">Search for colleges in J&K and see what they offer.</p></div></div></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer nav-link" data-view="timeline"><div class="flex items-center space-x-4"><div class="bg-yellow-100 p-3 rounded-full"><i data-lucide="calendar-days" class="text-yellow-600"></i></div><div><h3 class="text-xl font-semibold text-gray-800">Important Dates</h3><p class="text-gray-500">Track admission deadlines and scholarship dates.</p></div></div></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer nav-link" data-view="resources"><div class="flex items-center space-x-4"><div class="bg-red-100 p-3 rounded-full"><i data-lucide="book-open" class="text-red-600"></i></div><div><h3 class="text-xl font-semibold text-gray-800">Student Resources</h3><p class="text-gray-500">Access study materials, e-books, and scholarship info.</p></div></div></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer nav-link" data-view="aptitude-test"><div class="flex items-center space-x-4"><div class="bg-indigo-100 p-3 rounded-full"><i data-lucide="user-check" class="text-indigo-600"></i></div><div><h3 class="text-xl font-semibold text-gray-800">Personalized Suggestions</h3><p class="text-gray-500">AI-driven recommendations for courses and colleges (Coming Soon!).</p></div></div></div>
+                </div>
+
+                <div class="mt-16 bg-white p-8 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold text-center text-gray-800 mb-4">About Our Platform</h2>
+                    <p class="text-gray-600 leading-relaxed mb-6 text-center max-w-3xl mx-auto">
+                        Career Guide is a comprehensive digital platform designed to empower students in making informed decisions about their future. We understand that choosing a career path is one of the most critical steps in a student's life. Our mission is to provide clear, accessible, and reliable guidance, bridging the gap between education and employment.
+                    </p>
+                    <div class="border-t pt-6">
+                        <h3 class="text-xl font-semibold text-center text-gray-800 mb-4">What We Offer</h3>
+                        <ul class="space-y-3 text-gray-600 list-disc list-inside max-w-2xl mx-auto">
+                            <li>
+                                <strong>Aptitude Testing:</strong> Discover your strengths and interests with our tailored quiz to find the best academic stream for you.
+                            </li>
+                            <li>
+                                <strong>Detailed Career Paths:</strong> Explore a vast database of career options after the 10th and 12th grades, with detailed information on eligibility, entrance exams, top colleges, and future prospects.
+                            </li>
+                            <li>
+                                <strong>College Directory:</strong> Find and compare government colleges, complete with details on offered programs and facilities.
+                            </li>
+                            <li>
+                                <strong>Important Timeline:</strong> Never miss a deadline with our curated timeline of admission dates, scholarship applications, and entrance tests.
+                            </li>
+                            <li>
+                                <strong>Student Resources:</strong> Access a collection of helpful links for study materials, e-books, and scholarship portals.
+                            </li>
+                            <li>
+                              <strong>Carrer Guider:</strong> An AI-powered career guidance assistant that helps students and professionals choose the right path, explore opportunities, and make smarter career decisions.
+                                </li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+
+            <div id="aptitude-test" class="view"><div id="quiz-container" class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg"></div><div id="quiz-result" class="hidden max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg text-center"><h3 class="text-2xl font-bold mb-4">Test Complete!</h3><p class="text-lg mb-2">Based on your answers, we recommend you explore:</p><div id="recommendation" class="text-3xl font-bold text-blue-600 my-4 p-4 bg-blue-50 rounded-lg"></div><p class="text-gray-600 mb-6">This is a suggestion to guide your exploration. Your interests are unique!</p><button id="explore-recommendation-btn" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Explore Career Paths</button></div></div>
+
+            <div id="career-paths" class="view"><h2 class="text-3xl font-bold text-center mb-8">Course-to-Career Path Mapping</h2><div id="career-choice-container" class="max-w-3xl mx-auto text-center"></div><div id="career-path-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8"></div></div>
+
+            <div id="colleges" class="view"><h2 class="text-3xl font-bold text-center mb-8">Nearby Government Colleges Directory</h2><div class="max-w-3xl mx-auto mb-6"><input type="text" id="college-search" placeholder="Search by college name or city..." class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"></div><div id="college-list" class="space-y-4"></div></div>
+
+            <div id="timeline" class="view"><h2 class="text-3xl font-bold text-center mb-8">Timeline & Notifications</h2><div id="timeline-list" class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md"></div></div>
+
+            <div id="resources" class="view">
+                <h2 class="text-3xl font-bold text-center mb-8">Student Resources</h2>
+                <div id="resources-content" class="max-w-4xl mx-auto space-y-8"></div>
+            </div>
+
+        </main>
+
+        <footer class="text-center p-4 bg-white mt-8 border-t">
+            <p class="text-gray-500">Created By Cool Coders</p>
+        </footer>
+    </div>
+
+    <script src="script.js" defer></script>
+    
+    <script type="text/javascript">
+      (function(d, t) {
+          var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+          v.onload = function() {
+            window.voiceflow.chat.load({
+              verify: { projectID: '68c422782162423ad1f7c194' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production',
+              voice: {
+                url: "https://runtime-api.voiceflow.com"
+              }
+            });
+          }
+          v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+   
